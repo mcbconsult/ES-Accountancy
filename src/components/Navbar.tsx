@@ -18,6 +18,7 @@ export const Navbar = () => {
     { name: 'Home', href: '/' },
     { name: 'Over ons', href: '/over-ons' },
     { name: 'Diensten', href: '/diensten' },
+    { name: 'Blogs', href: '/blogs' },
   ];
 
   return (

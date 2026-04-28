@@ -92,7 +92,7 @@ export const HomePage = () => {
             </p>
             <div className="flex flex-col sm:flex-row gap-6">
               <Link to="/contact" className="btn-primary">
-                Afspraak maken
+                Contact
               </Link>
               <Link to="/diensten" className="btn-outline">
                 Onze diensten
@@ -116,7 +116,7 @@ export const HomePage = () => {
             </div>
             <div className="absolute -bottom-10 -left-10 bg-brand-primary p-10 hidden md:block">
               <div className="text-white">
-                <div className="text-4xl font-serif font-bold mb-1">4+</div>
+                <div className="text-4xl font-serif font-bold mb-1">15+</div>
                 <div className="text-[10px] uppercase tracking-[0.2em] font-medium opacity-80">Jaren Expertise</div>
               </div>
             </div>

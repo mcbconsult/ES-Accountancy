@@ -4,7 +4,6 @@ import {
   Calculator, 
   FileText, 
   TrendingUp, 
-  ShieldCheck, 
   Zap, 
   Briefcase
 } from 'lucide-react';
@@ -57,44 +56,48 @@ export const ServicesPage = () => {
 
       {/* Services Grid */}
       <section className="section-padding bg-white">
-        <div className="max-w-7xl mx-auto">
-          <div className="grid md:grid-cols-3 gap-px bg-brand-section border border-brand-section">
-            <ServiceCard 
-              icon={Calculator}
-              title="Accountancy"
-              description="Volledige ontzorging van uw boekhouding, jaarrekeningen en wettelijke verplichtingen."
-              delay={0.1}
-            />
-            <ServiceCard 
-              icon={FileText}
-              title="Fiscaal Advies"
-              description="Strategische optimalisatie van uw fiscale positie voor zowel zakelijk als privé."
-              delay={0.2}
-            />
-            <ServiceCard 
-              icon={Zap}
-              title="Startersadvies"
-              description="Begeleiding bij de opstart van uw zaak, van businessplan tot inschrijving."
-              delay={0.3}
-            />
-            <ServiceCard 
-              icon={Briefcase}
-              title="Bedrijfsadvies"
-              description="Ondersteuning bij groei, herstructurering of overname van uw onderneming."
-              delay={0.4}
-            />
-            <ServiceCard 
-              icon={ShieldCheck}
-              title="Compliance"
-              description="Zekerheid dat u voldoet aan alle actuele wet- en regelgeving."
-              delay={0.5}
-            />
-            <ServiceCard 
-              icon={TrendingUp}
-              title="Financiële Planning"
-              description="Inzicht in uw toekomst met gedetailleerde prognoses en planning."
-              delay={0.6}
-            />
+        <div className="max-w-7xl mx-auto px-6 md:px-12">
+          <div className="flex flex-wrap justify-center gap-6 md:gap-8">
+            <div className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+              <ServiceCard 
+                icon={Calculator}
+                title="Accountancy"
+                description="Volledige ontzorging van uw boekhouding, jaarrekeningen en wettelijke verplichtingen."
+                delay={0.1}
+              />
+            </div>
+            <div className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+              <ServiceCard 
+                icon={FileText}
+                title="Fiscaal Advies"
+                description="Strategische optimalisatie van uw fiscale positie voor zowel zakelijk als privé."
+                delay={0.2}
+              />
+            </div>
+            <div className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+              <ServiceCard 
+                icon={Zap}
+                title="Startersadvies"
+                description="Begeleiding bij de opstart van uw zaak, van businessplan tot de verdere groei van uw onderneming."
+                delay={0.3}
+              />
+            </div>
+            <div className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+              <ServiceCard 
+                icon={Briefcase}
+                title="Bedrijfsadvies"
+                description="Ondersteuning bij groei, herstructurering of overname van uw onderneming."
+                delay={0.4}
+              />
+            </div>
+            <div className="w-full md:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.5rem)]">
+              <ServiceCard 
+                icon={TrendingUp}
+                title="Financiële Planning"
+                description="Inzicht in uw toekomst met gedetailleerde prognoses en planning."
+                delay={0.6}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -104,7 +107,7 @@ export const ServicesPage = () => {
         <div className="max-w-7xl mx-auto px-6 md:px-12 text-center">
           <h2 className="text-3xl md:text-4xl font-serif text-white mb-10">Klaar om uw cijfers te optimaliseren?</h2>
           <a href="/contact" className="inline-block bg-white text-brand-primary px-10 py-5 text-xs uppercase tracking-widest font-bold hover:bg-brand-section transition-colors">
-            Vrijblijvend gesprek aanvragen
+            Contact
           </a>
         </div>
       </section>

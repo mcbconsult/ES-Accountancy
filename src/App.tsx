@@ -13,6 +13,8 @@ import { HomePage } from './pages/HomePage';
 import { AboutPage } from './pages/AboutPage';
 import { ServicesPage } from './pages/ServicesPage';
 import { ContactPage } from './pages/ContactPage';
+import { BlogPage } from './pages/BlogPage';
+import { BlogPostDetail } from './pages/BlogPostDetail';
 
 // --- Components ---
 
@@ -34,7 +36,7 @@ const ScrollToTop = () => {
   return null;
 };
 
-const LegalModal = ({ isOpen, onClose, initialTab }: { isOpen: boolean, onClose: () => void, initialTab: 'privacy' | 'disclaimer' | 'cookies' }) => {
+const LegalModal = ({ isOpen, onClose, initialTab }: { isOpen: boolean, onClose: () => void, initialTab: 'privacy' | 'disclaimer' }) => {
   const [activeTab, setActiveTab] = useState(initialTab);
 
   useEffect(() => {
@@ -72,12 +74,6 @@ const LegalModal = ({ isOpen, onClose, initialTab }: { isOpen: boolean, onClose:
             >
               Disclaimer
             </button>
-            <button 
-              onClick={() => setActiveTab('cookies')}
-              className={`text-xs uppercase tracking-widest font-bold transition-colors ${activeTab === 'cookies' ? 'text-brand-primary border-b-2 border-brand-primary pb-1' : 'text-brand-text/40 hover:text-brand-text'}`}
-            >
-              Cookies
-            </button>
           </div>
           <button onClick={onClose} className="text-brand-text/40 hover:text-brand-text transition-colors">
             <X size={24} />
@@ -87,62 +83,74 @@ const LegalModal = ({ isOpen, onClose, initialTab }: { isOpen: boolean, onClose:
         <div className="flex-1 overflow-y-auto p-8 md:p-12 prose prose-sm max-w-none text-brand-text/80 leading-relaxed">
           {activeTab === 'privacy' && (
             <div className="space-y-8">
-              <h2 className="text-3xl font-serif text-brand-text mb-6">Privacyverklaring (GDPR)</h2>
-              <p className="font-medium">Inleiding</p>
-              <p>Als accountantskantoor staan wij in voor de verwerking van heel wat gegevens. Een deel van deze gegevens hebben betrekking op persoonsgegevens en in dit kader delen wij u het volgende mee.</p>
-              <p>Het kantoor verzamelt en verwerkt de identiteits- en contactgegevens dat het ontvangt van de cliënt over de cliënt zelf, zijn gezinsleden, zijn personeel, zijn medewerkers, zijn aangestelden en zijn zakelijke relaties (leveranciers of klanten van de cliënt) en over elke andere nuttige contactpersoon. Deze persoonsgegevens worden verwerkt door het kantoor in overeenstemming met de Belgische wetgeving over gegevensbescherming en de bepalingen van de Verordening 2016/679 van 27 april 2016 betreffende de bescherming van natuurlijke personen in verband met de verwerking van persoonsgegevens en betreffende het vrije verkeer van die gegevens, van toepassing sinds 25 mei 2018 (hierna ‘Algemene Verordening Gegevensbescherming’).</p>
+              <h2 className="text-3xl font-serif text-brand-text mb-6 tracking-tight">PRIVACY & GDPR</h2>
+              <div className="space-y-4">
+                <h3 className="text-xl font-serif text-brand-text font-medium">Inleiding</h3>
+                <p>Als accountantskantoor staan wij in voor de verwerking van heel wat gegevens. Een deel van deze gegevens hebben betrekking op persoonsgegevens en in dit kader delen wij u het volgende mee.</p>
+                <p>Het kantoor verzamelt en verwerkt de identiteits- en contactgegevens dat het ontvangt van de cliënt over de cliënt zelf, zijn gezinsleden, zijn personeel, zijn medewerkers, zijn aangestelden en zijn zakelijke relaties (leveranciers of klanten van de cliënt) en over elke andere nuttige contactpersoon. Deze persoonsgegevens worden verwerkt door het kantoor in overeenstemming met de Belgische wetgeving over gegevensbescherming en de bepalingen van de Verordening 2016/679 van 27 april 2016 (Algemene Verordening Gegevensbescherming).</p>
+              </div>
               
-              <h3 className="text-xl font-serif text-brand-text">1. Verantwoordelijke voor de verwerking</h3>
-              <p>De verantwoordelijke voor de verwerking van de persoonsgegevens is <strong>Kucukovic Ervin</strong>. De zetel is gelegen te Schermershoek nr.9 – 1730 Mollem met ondernemingsnummer 0790.611.267. De verantwoordelijke is ingeschreven bij het ITAA onder erkenningsnummer 10.731.028.</p>
-              
-              <h3 className="text-xl font-serif text-brand-text">2. Doeleinden van de verwerking</h3>
-              <p>Het kantoor verwerkt de persoonsgegevens voor de volgende doeleinden:</p>
-              <ul className="list-disc pl-5 space-y-2">
-                <li>Toepassing van de Wet van 18 september 2017 tot voorkoming van het witwassen van geld.</li>
-                <li>Wettelijke verplichtingen ten aanzien van de Belgische overheid (fiscale en sociale wetten).</li>
-                <li>Uitvoering van de overeenkomst betreffende boekhoudkundige en fiscale diensten.</li>
-                <li>Directe prospectie (nieuwsbrieven), mits toestemming.</li>
-              </ul>
+              <div className="space-y-4 pt-4">
+                <h3 className="text-xl font-serif text-brand-text font-medium">1. Verantwoordelijke voor de verwerking</h3>
+                <p>De verantwoordelijke voor de verwerking van de persoonsgegevens is <strong>Kucukovic Ervin</strong>.</p>
+                <p>De zetel van de verantwoordelijke is gelegen te <strong>Schermershoek nr.9 – 1730 Mollem</strong> met als het ondernemingsnummer <strong>0790.611.267</strong>.</p>
+                <p>De verantwoordelijke is ingeschreven bij het ITAA onder erkenningsnummer <strong>10.731.028</strong>.</p>
+                <p>Voor alle vragen met betrekking tot de bescherming van persoonsgegevens, kunt u steeds terecht bij ES Accountancy via brief op het bovenstaande adres of via e-mail: <a href="mailto:info@esaccountancy.be" className="text-brand-primary hover:underline">info@esaccountancy.be</a>.</p>
+              </div>
 
-              <h3 className="text-xl font-serif text-brand-text">3. Welke persoonsgegevens?</h3>
-              <p>Wij verwerken identificatiegegevens, biometrische gegevens (kopie ID), bankgegevens, facturatiegegevens en gegevens nodig voor Tax-on-web (kinderen, medische gegevens indien relevant voor aangifte).</p>
+              <div className="space-y-4 pt-4">
+                <h3 className="text-xl font-serif text-brand-text font-medium">2. Doeleinden van de verwerking</h3>
+                <p>In het algemeen verwerkt het kantoor de persoonsgegevens voor de volgende doeleinden:</p>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li><strong>Anti-witwaswetgeving:</strong> Toepassing van de Wet van 18 september 2017 tot voorkoming van het witwassen van geld en de financiering van terrorisme.</li>
+                  <li><strong>Wettelijke verplichtingen:</strong> Verplichtingen ten aanzien van de Belgische overheid, fiscale (o.a. BTW-listings) en sociale wetgeving.</li>
+                  <li><strong>Uitvoering overeenkomst:</strong> Uitvoering van de overeenkomst voor boekhoudkundige en fiscale diensten.</li>
+                  <li><strong>Directe prospectie:</strong> Activiteiten zoals het versturen van commerciële informatie of nieuwsbrieven (uitsluitend na toestemming).</li>
+                </ul>
+              </div>
 
-              <h3 className="text-xl font-serif text-brand-text">4. Ontvangers van gegevens</h3>
-              <p>Gegevens kunnen worden gedeeld met wettelijk bevoegde overheden, externe medewerkers (notaris, revisor) of softwareleveranciers, strikt beperkt tot wat noodzakelijk is.</p>
+              <div className="space-y-4 pt-4">
+                <h3 className="text-xl font-serif text-brand-text font-medium">3. Welke persoonsgegevens?</h3>
+                <p>Het kantoor verwerkt onder meer:</p>
+                <ul className="list-disc pl-5 space-y-2">
+                  <li>Identificatiegegevens (naam, adres, telefoon, e-mail, nationaal nummer);</li>
+                  <li>Biometrische gegevens (kopie identiteitskaart);</li>
+                  <li>Bank- en facturatiegegevens;</li>
+                  <li>In het kader van personenbelasting: gegevens over kinderen, medische gegevens (indien relevant voor aftrekposten), etc.</li>
+                </ul>
+              </div>
 
-              <h3 className="text-xl font-serif text-brand-text">5. Veiligheidsmaatregelen</h3>
-              <p>Wij hebben passende technische en organisatorische maatregelen getroffen om ongeoorloofde toegang, verlies of wijziging van gegevens te voorkomen.</p>
+              <div className="space-y-4 pt-4">
+                <h3 className="text-xl font-serif text-brand-text font-medium">4. Veiligheid en Bewaring</h3>
+                <p>Het kantoor heeft passende organisatorische en technische maatregelen getroffen om een beschermingsniveau te waarborgen dat past bij de risico's.</p>
+                <p>Identificatiegegevens in het kader van de Anti-witwaswet worden bewaard tot <strong>10 jaar</strong> na het einde van de zakelijke relatie. Andere gegevens worden bewaard gedurende de wettelijke termijnen voorzien in de boekhoudkundige en fiscale wetgeving.</p>
+              </div>
 
-              <h3 className="text-xl font-serif text-brand-text">6. Bewaringstermijn</h3>
-              <p>Identificatiegegevens in het kader van de antiwitwaswet worden bewaard tot 10 jaar na het einde van de zakelijke relatie. Andere gegevens volgen de wettelijke termijnen (fiscaal, boekhoudkundig).</p>
-
-              <h3 className="text-xl font-serif text-brand-text">7. Uw rechten</h3>
-              <p>U beschikt over het recht op inzage, rectificatie, wissing (vergetelheid), beperking van verwerking, overdraagbaarheid en bezwaar. Voor de antiwitwaswetgeving gelden specifieke beperkingen op deze rechten (art. 65 Wet 18/09/2017).</p>
-
-              <h3 className="text-xl font-serif text-brand-text">8. Klachten</h3>
-              <p>U kunt een klacht indienen bij de Gegevensbeschermingsautoriteit, Drukpersstraat 35, 1000 Brussel.</p>
+              <div className="space-y-4 pt-4">
+                <h3 className="text-xl font-serif text-brand-text font-medium">5. Uw rechten</h3>
+                <p>Onder de AVG beschikt u over rechten zoals inzage, rectificatie, wissing ('vergetelheid'), beperking en bezwaar. Let op: voor gegevens onder de Anti-witwaswet gelden specifieke wettelijke beperkingen op deze rechten (Art. 65 Wet 18/09/2017).</p>
+                <p>Voor klachten kunt u zich wenden tot de <strong>Gegevensbeschermingsautoriteit</strong>:</p>
+                <p className="text-xs italic">Drukpersstraat 35, 1000 Brussel | Tel: +32 (0)2 274 48 00 | contact@apd-gba.be</p>
+              </div>
             </div>
           )}
 
           {activeTab === 'disclaimer' && (
             <div className="space-y-8">
-              <h2 className="text-3xl font-serif text-brand-text mb-6">Disclaimer</h2>
-              <h3 className="text-xl font-serif text-brand-text">Gebruiksvoorwaarden</h3>
-              <p>Door gebruik te maken van deze website verbindt u zich ertoe deze gebruiksvoorwaarden na te leven en te aanvaarden. ES Accountancy bezit het exclusieve recht van deze website, haar bestanddelen en inhoud.</p>
+              <h2 className="text-3xl font-serif text-brand-text mb-6 tracking-tight">DISCLAIMER</h2>
               
-              <h3 className="text-xl font-serif text-brand-text">Informatie</h3>
-              <p>De aangeboden informatie op onze website kan onvolkomenheden bevatten en is louter informatief. Wij staan niet in voor de geschiktheid, betrouwbaarheid, tijdigheid of nauwkeurigheid van de informatie.</p>
-              
-              <h3 className="text-xl font-serif text-brand-text">Toepasselijke wetgeving</h3>
-              <p>De Belgische wetgeving is van toepassing. Ingeval van betwistingen zijn enkel de rechtbanken van ons rechtgebied bevoegd.</p>
-            </div>
-          )}
+              <div className="space-y-4">
+                <h3 className="text-xl font-serif text-brand-text font-medium">Gebruiksvoorwaarden</h3>
+                <p>Deze gebruiksvoorwaarden zijn van toepassing op deze website. Door gebruik te maken van deze website verbindt u zich ertoe deze gebruiksvoorwaarden na te leven en te aanvaarden.</p>
+              </div>
 
-          {activeTab === 'cookies' && (
-            <div className="space-y-8">
-              <h2 className="text-3xl font-serif text-brand-text mb-6">Cookiebeleid</h2>
-              <p>Bij het bezoeken van onze website kunnen cookies op uw computer geplaatst worden. Deze worden gebruikt om de gebruikerservaring te verbeteren en anonieme statistieken te verzamelen.</p>
-              <p>U kunt het gebruik van cookies beheren via uw browserinstellingen.</p>
+              <div className="space-y-4">
+                <p>ES Accountancy bezit het exclusieve recht van deze website, haar bestanddelen en inhoud. Het is verboden zonder voorafgaande schriftelijk akkoord deze te gebruiken, reproduceren of te verwerken.</p>
+              </div>
+              
+              <div className="pt-8 border-t border-brand-section opacity-60 text-xs">
+                <p>De Belgische wetgeving is van toepassing. Ingeval van betwistingen zijn enkel de rechtbanken van ons rechtgebied bevoegd.</p>
+              </div>
             </div>
           )}
         </div>
@@ -152,9 +160,9 @@ const LegalModal = ({ isOpen, onClose, initialTab }: { isOpen: boolean, onClose:
 };
 
 export default function App() {
-  const [legalModal, setLegalModal] = useState<{ isOpen: boolean, tab: 'privacy' | 'disclaimer' | 'cookies' }>({ isOpen: false, tab: 'privacy' });
+  const [legalModal, setLegalModal] = useState<{ isOpen: boolean, tab: 'privacy' | 'disclaimer' }>({ isOpen: false, tab: 'privacy' });
 
-  const openLegal = (tab: 'privacy' | 'disclaimer' | 'cookies') => {
+  const openLegal = (tab: 'privacy' | 'disclaimer') => {
     setLegalModal({ isOpen: true, tab });
   };
 
@@ -168,6 +176,8 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/over-ons" element={<AboutPage />} />
           <Route path="/diensten" element={<ServicesPage />} />
+          <Route path="/blogs" element={<BlogPage />} />
+          <Route path="/blogs/:slug" element={<BlogPostDetail />} />
           <Route path="/contact" element={<ContactPage />} />
         </Routes>
 
