@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", ui-sans-serif, system-ui, sans-serif;
+  --font-serif: "Playfair Display", serif;
+  
+  --color-brand-primary: #76923b; /* Moss Green */
+  --color-brand-secondary: #5e752f; /* Darker Moss Green */
+  --color-brand-bg: #FFFFFF; /* White */
+  --color-brand-section: #F2F2F2; /* Light Grey */
+  --color-brand-text: #333333; /* Dark Grey */
+}
+
+@layer base {
+  body {
+    @apply font-sans text-brand-text bg-brand-bg antialiased text-[17px] leading-relaxed;
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-serif text-brand-text;
+  }
+}
+
+.section-padding {
+  @apply py-24 px-6 md:px-12 lg:px-32;
+}
+
+.btn-primary {
+  @apply bg-brand-primary text-white px-8 py-3 rounded-md font-medium hover:bg-brand-secondary transition-all duration-300 shadow-sm;
+}
+
+.btn-outline {
+  @apply border border-brand-primary text-brand-primary px-8 py-3 rounded-md font-medium hover:bg-brand-primary hover:text-white transition-all duration-300;
+}
