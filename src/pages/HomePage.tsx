@@ -108,8 +108,8 @@ export const HomePage = () => {
           >
             <div className="aspect-[4/3] overflow-hidden shadow-2xl">
               <img 
-                src="https://streetviewpixels-pa.googleapis.com/v1/thumbnail?panoid=X2u68_pzjnPVWvxywfN5Qw&cb_client=search.gws-prod.gps&w=408&h=240&yaw=33.806675&pitch=0&thumbfov=100" 
-                alt="Professional Office" 
+                src="https://img.sanishtech.com/u/1e015e0e331b3bb2b8d3b515aa0b7a7d.jpg" 
+                alt="Modern Accounting Office" 
                 className="w-full h-full object-cover grayscale-[20%] hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
               />

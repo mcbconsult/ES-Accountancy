@@ -39,9 +39,9 @@ export const AboutPage = () => {
             transition={{ duration: 0.8 }}
             className="relative"
           >
-            <div className="aspect-square overflow-hidden">
+            <div className="aspect-square overflow-hidden shadow-xl">
               <img 
-                src="https://static.wixstatic.com/media/f59727_fc5a9724b8094be4b1fe2fb47ae001d1~mv2.jpg/v1/fill/w_515,h_589,al_c,q_80,enc_avif,quality_auto/Ervin%20profiel%20(2)_edited.jpg" 
+                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2698&auto=format&fit=crop" 
                 alt="Ervin Kucukovic" 
                 className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
