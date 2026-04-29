@@ -29,7 +29,7 @@ export const AboutPage = () => {
         </div>
       </section>
 
-      {/* About Section (Moved from Home) */}
+      {/* About Section - Ervin */}
       <section id="over-ons" className="section-padding bg-white">
         <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
           <motion.div
@@ -41,7 +41,7 @@ export const AboutPage = () => {
           >
             <div className="aspect-square overflow-hidden shadow-xl">
               <img 
-                src="https://images.unsplash.com/photo-1560250097-0b93528c311a?q=80&w=2698&auto=format&fit=crop" 
+                src="https://static.wixstatic.com/media/f59727_fc5a9724b8094be4b1fe2fb47ae001d1~mv2.jpg/v1/fill/w_515,h_589,al_c,q_80,enc_avif,quality_auto/Ervin%20profiel%20(2)_edited.jpg" 
                 alt="Ervin Kucukovic" 
                 className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700"
                 referrerPolicy="no-referrer"
@@ -71,6 +71,58 @@ export const AboutPage = () => {
               </p>
               <p className="italic font-serif text-brand-text text-lg">
                 "Mijn doel is om uw financiële zorgen weg te nemen, zodat u zich kunt focussen op wat u het beste doet: ondernemen."
+              </p>
+            </div>
+          </motion.div>
+        </div>
+      </section>
+
+      {/* About Section - Steffi */}
+      <section className="section-padding bg-brand-section/30">
+        <div className="max-w-7xl mx-auto grid lg:grid-cols-2 gap-24 items-center">
+          <motion.div
+            initial={{ opacity: 0, x: -30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:order-2 relative"
+          >
+            <div className="aspect-square overflow-hidden shadow-xl">
+              <img 
+                src="https://img.sanishtech.com/u/36f92dfbf153ecdf9da55c8a3e73619e.jpg" 
+                alt="Steffi" 
+                className="w-full h-full object-cover grayscale-[10%] hover:grayscale-0 transition-all duration-700"
+                referrerPolicy="no-referrer"
+              />
+            </div>
+            <div className="absolute bottom-10 -left-10 w-40 h-40 bg-white -z-10" />
+          </motion.div>
+
+          <motion.div
+            initial={{ opacity: 0, x: 30 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            viewport={{ once: true }}
+            transition={{ duration: 0.8 }}
+            className="lg:order-1"
+          >
+            <span className="text-brand-primary font-semibold text-xs uppercase tracking-[0.2em] mb-6 block">
+              De Drijvende Kracht & Founder
+            </span>
+            <h2 className="text-4xl md:text-5xl font-serif font-medium mb-10 text-brand-text leading-tight">
+              Hallo, ik ben Steffi
+            </h2>
+            <div className="space-y-8 text-brand-text/70 leading-relaxed">
+              <p>
+                Ik ben een echte liefhebber van orde en stiptheid. Zowel op middelbare school als op hogeschoolniveau genoot ik een solide opleiding in boekhouding.
+              </p>
+              <p>
+                Na deze opleiding heb ik een waardevolle stage gehad bij een boekhoudkantoor, waar ik nadien ook aan de slag ben gegaan.
+              </p>
+              <p>
+                Buiten mijn werk ben ik iemand die geniet van creatieve uitlaatkleppen zoals bakken en muziek maken. Ook geniet ik van de rustgevende wandelingen met mijn echtgenoot en onze honden.
+              </p>
+              <p className="italic font-serif text-brand-text text-lg">
+                "Dit is mijn leven in een notendop: een perfecte balans tussen precisie op het werk, creativiteit en ontspanning in mijn vrije tijd."
               </p>
             </div>
           </motion.div>

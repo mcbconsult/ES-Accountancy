@@ -11,9 +11,20 @@ export const Footer = ({ onOpenLegal }: { onOpenLegal: (tab: 'privacy' | 'discla
           </span>
         </div>
         
-        <div className="flex gap-8 text-[10px] uppercase tracking-[0.2em] font-bold text-brand-text/30">
-          <button onClick={() => onOpenLegal('privacy')} className="hover:text-brand-primary transition-colors cursor-pointer">Privacy</button>
-          <button onClick={() => onOpenLegal('disclaimer')} className="hover:text-brand-primary transition-colors cursor-pointer">Disclaimer</button>
+        <div className="flex items-center gap-1">
+          <button 
+            onClick={() => onOpenLegal('disclaimer')} 
+            className="text-[13px] italic underline text-[#428CBB] hover:text-[#31708E] transition-colors cursor-pointer"
+          >
+            Disclaimer
+          </button>
+          <span className="text-[13px] italic underline text-[#428CBB]">&</span>
+          <button 
+            onClick={() => onOpenLegal('privacy')} 
+            className="text-[13px] italic underline text-[#428CBB] hover:text-[#31708E] transition-colors cursor-pointer"
+          >
+            Privacy
+          </button>
         </div>
 
         <div className="text-[10px] text-brand-text/40 font-medium uppercase tracking-wider flex items-center gap-2">

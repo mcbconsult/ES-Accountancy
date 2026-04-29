@@ -50,7 +50,7 @@ Bij **ES Accountancy** maken we graag een simulatie op maat van uw ondernemingsp
     `,
     date: "24 April 2026",
     author: "Armina Kucukovic",
-    image: "https://images.unsplash.com/photo-1434626881859-194d67b2b86f?q=80&w=2674&auto=format&fit=crop"
+    image: "https://www.billit.eu/media/ujadi4n5/20251106_blogeenmanszaak_vennootschap.png"
   },
   {
     title: "Fiscale optimalisatie voor vrije beroepen",
